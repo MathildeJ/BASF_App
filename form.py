@@ -6,10 +6,10 @@ def index():
    return render_template('index.html')
 
 @app.route('/landing_page')
-def agents():
+def landing_page():
    return render_template('landing_page.html')
 
-@app.route('/input')
-def chat():
-   return render_template('input.html')
+@app.route('/input_field')
+def input_field():
+   return render_template('input_field.html')
 
