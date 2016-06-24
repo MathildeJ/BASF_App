@@ -33,12 +33,13 @@
           /* get the table */
           var table = document.getElementById('checkCode');
           for (var r = 0; r < table.rows.length; r++) {
-                /* get each element stored in the table */
-                var tableData = table.rows[r].cells[3];
-                console.log(tableData);
-                if(input === tableData){
-			success = true;
-			break;
+		for (var c = 0; c < table.rows[r].cells.length; c++) {
+                	var tableData = table.rows[r].cells[c].innerHTML;
+		        console.log(tableData);
+		        if(input === tableData){
+				success = true;
+				break;
+			}
 		}
           }
 	  /* compare it to the input in the text box */
