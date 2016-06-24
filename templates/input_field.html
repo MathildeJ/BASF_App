@@ -31,10 +31,11 @@
           console.log(input);
           /* get the table */
           var table = document.getElementById('checkCode');
-          for (var r = 0, n = table.rows.length; r < n; r++) {
-             for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+          for (var r = 0; r < table.rows.length; r++) {
+             for (var c = 0; c < table.rows[r].cells.length; c++) {
                 /* get each element stored in the table */
                 var tableData = table.rows[r].cells[c].innerHTML;
+                console.log(tableData);
                 /* compare it to the input in the text box */
                 if (input === tableData){
                     alert("success");
