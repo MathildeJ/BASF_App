@@ -7,8 +7,12 @@ h1, h2, h4{
 text-align:center;
 }
 
-
-.center_form{
-   margin: 0 auto;
-   text-align: center;
+.wrapper {
+    text-align: center;
 }
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
