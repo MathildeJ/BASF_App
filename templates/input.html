@@ -36,8 +36,8 @@
              for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
                 /* get each element stored in the table */
                 var tableData = table.rows[r].cells[c].innerHTML;
-                /* compare it to the input in the text box */
-                if (input === tableData){
+                var tableDatatoString = String(tableData);
+                if (input === tableDatatoString){
                     alert("success");
                 } else {
                     alert("failure");
