@@ -13,3 +13,6 @@ def landing_page():
 def input_field():
    return render_template('input_field.html')
 
+@app.route('/display_form')
+def display_form():
+   return render_template('display_form.html')
