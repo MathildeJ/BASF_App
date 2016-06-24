@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enter code</title>
+    <script src="jquery-1.12.2.min.js"></script>
+  </head>
+  <body>
+      <h3>Please fill in your code</h3>
+      <form>
+         <p><input type="text" id="codeInput" value=""/></p>
+         <p><input type="submit" onclick="getForm();"/>
+      </form>    
+ 
+
+      <table id="checkCode">
+        <tr>
+          <td>Howard</td>
+          <td>Smith</td>
+          <td>1234</td>
+        </tr>
+        <tr>
+           <td>Ruth</td>
+           <td>Smith</td>
+           <td>0987</td>
+        </tr>
+       <table>
+
+      <script type="text/javascript">
+(function ($) {
+    $.fn.shake = function (options) {
+        // defaults
+        var settings = {
+            'shakes': 2,
+            'distance': 10,
+            'duration': 400
+        };
+        // merge options
+        if (options) {
+            $.extend(settings, options);
+        }
+        // make it so
+        var pos;
+        return this.each(function () {
+            $this = $(this);
+            // position if necessary
+            pos = $this.css('position');
+            if (!pos || pos === 'static') {
+                $this.css('position', 'relative');
+            }
+            // shake it
+            for (var x = 1; x <= settings.shakes; x++) {
+                $this.animate({ left: settings.distance * -1 }, (settings.duration / settings.shakes) / 4)
+                    .animate({ left: settings.distance }, (settings.duration / settings.shakes) / 2)
+                    .animate({ left: 0 }, (settings.duration / settings.shakes) / 4);
+            }
+        });
+    };
+}(jQuery));
+
+       function getForm() {
+          /* save the input from the text-box */
+          var success = false;
+          var input = document.getElementById("codeInput").value;
+          console.log(input);
+          /* get the table */
+          var table = document.getElementById('checkCode');
+          for (var r = 0; r < table.rows.length; r++) {
+		for (var c = 0; c < table.rows[r].cells.length; c++) {
+                	var tableData = table.rows[r].cells[2].innerHTML;
+		        console.log(tableData);
+		        if(input === tableData){
+				success = true;
+				break;
+			}
+		}
+          }
+	  /* compare it to the input in the text box */
+          if (success){
+                alert("success");
+          } else {
+                //alert("failure");
+		$(this.form).shake();
+          }
+       }
+
+       </script>
+  </body>
+</html>
