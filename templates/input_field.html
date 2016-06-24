@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enter code</title>
+  </head>
+  <body>
+      <h3>Please fill in your code</h3>
+      <form>
+         <p><input type="text" id="codeInput"/></p>
+         <p><input type="submit" onclick="getForm();"/>
+      </form>    
+ 
+
+      <table id="checkCode">
+        <tr>
+          <td>Howard</td>
+          <td>Smith</td>
+          <td>1234</td>
+        </tr>
+        <tr>
+           <td>Ruth</td>
+           <td>Smith</td>
+           <td>0987</td>
+        </tr>
+       <table>
+
+      <script type="text/javascript">
+       function getForm() {
+          /* save the input from the text-box */
+          var input = document.getElementById("codeInput").value;
+          console.log(input);
+          /* get the table */
+          var table = document.getElementById('checkCode');
+          for (var r = 0, n = table.rows.length; r < n; r++) {
+             for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+                /* get each element stored in the table */
+                var tableData = table.rows[r].cells[c].innerHTML;
+                /* compare it to the input in the text box */
+                if (input === tableData){
+                    alert("success");
+                } else {
+                    alert("failure");
+            }
+        }
+    }
+}
+       </script>
+  </body>
+</html>
