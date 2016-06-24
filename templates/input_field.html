@@ -26,8 +26,8 @@
        <table>
 
       <script type="text/javascript">
-      (function ($) {
-        $.fn.shake = function (options) {
+(function ($) {
+    $.fn.shake = function (options) {
         // defaults
         var settings = {
             'shakes': 2,
@@ -54,6 +54,8 @@
                     .animate({ left: 0 }, (settings.duration / settings.shakes) / 4);
             }
         });
+    };
+}(jQuery));
 
        function getForm() {
           /* save the input from the text-box */
@@ -64,7 +66,7 @@
           var table = document.getElementById('checkCode');
           for (var r = 0; r < table.rows.length; r++) {
 		for (var c = 0; c < table.rows[r].cells.length; c++) {
-                	var tableData = table.rows[r].cells[c].innerHTML;
+                	var tableData = table.rows[r].cells[2].innerHTML;
 		        console.log(tableData);
 		        if(input === tableData){
 				success = true;
