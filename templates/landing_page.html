@@ -14,14 +14,15 @@
 	.button {
 	    background-color: #4CAF50;
 	    border: none;
-	    color: black;
+	    color: rgba(197,0,34,0.6);
 	    padding: 15px 32px;
 	    text-align: center;
 	    text-decoration: none;
 	    display: inline-block;
-	    font-size: 32px;
+	    font-size: 38px;
 	    margin: 4px 2px;
 	    cursor: pointer;
+            width: 100%;
 	}
     </style>
   </head>
@@ -36,12 +37,9 @@
 	request.onreadystatechange = function () {
 	  if (this.readyState === 4) {
 	    if(window.__surfly){
-		    console.log('Body:', this.responseText);
 		    var body = this.responseText; 
- 		    console.log(body);
 		    var index = body.indexOf("queue_id");
 		    var id = body.substring(index+10, body.length-2);
-		    console.log(id);
 
 		    document.getElementById("id_button").innerHTML=id;
 	    }
