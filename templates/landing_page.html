@@ -16,7 +16,7 @@
   </head>
 
   <body>
-        <button type="button" id="id_button"></button>
+        <button type="button" id="id_button" style="font-size : 32px; width: 100%; height: 100px;"></button>
 	<script type="text/javascript">
 	var request = new XMLHttpRequest();
 
@@ -28,9 +28,8 @@
 		    console.log('Body:', this.responseText);
 		    var body = this.responseText; 
  		    console.log(body);
-		    var index = body.indexOf("viewer_link");
-		    var index_end = body.indexOf("start_time");
-		    var id = body.substring(index+33, index_end-4);
+		    var index = body.indexOf("queue_id");
+		    var id = body.substring(index+10, body.length-2);
 		    console.log(id);
 
 		    document.getElementById("id_button").innerHTML=id;
