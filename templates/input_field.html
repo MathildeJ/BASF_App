@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Enter code</title>
-    <script src="jquery-3.0.0.js"></script>
+    <script src="jquery-1.12.2.min.js"></script>
   </head>
   <body>
       <h3>Please fill in your code</h3>
@@ -26,6 +26,7 @@
        <table>
 
       <script type="text/javascript">
+/*
 (function ($) {
     $.fn.shake = function (options) {
         // defaults
@@ -56,6 +57,7 @@
         });
     };
 }(jQuery));
+*/
 
        function getForm() {
           /* save the input from the text-box */
@@ -78,8 +80,8 @@
           if (success){
                 alert("success");
           } else {
-                //alert("failure");
-		$(this.form).shake();
+                alert("failure");
+		//$(this.form).shake();
           }
        }
 
